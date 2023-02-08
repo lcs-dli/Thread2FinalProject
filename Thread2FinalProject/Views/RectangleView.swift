@@ -1,5 +1,5 @@
 //
-//  twoDimensionListView.swift
+//  RectangleView.swift
 //  Thread2FinalProject
 //
 //  Created by David Li on 2023-02-09.
@@ -7,14 +7,14 @@
 
 import SwiftUI
 
-struct twoDimensionListView: View {
+struct RectangleView: View {
     var body: some View {
         Text(/*@START_MENU_TOKEN@*/"Hello, World!"/*@END_MENU_TOKEN@*/)
     }
 }
 
-struct twoDimensionListView_Previews: PreviewProvider {
+struct RectangleView_Previews: PreviewProvider {
     static var previews: some View {
-        twoDimensionListView()
+        RectangleView()
     }
 }
