@@ -33,7 +33,19 @@ struct TriangleView: View {
     }
     
     var body: some View {
-        Text(/*@START_MENU_TOKEN@*/"Hello, World!"/*@END_MENU_TOKEN@*/)
+        VStack{
+            Image("Triangle")
+            HStack(alignment: .center){
+                Spacer()
+                Text("Base: ")
+                TextField("input", text: $base)
+                Text("Height: ")
+                TextField("input", text: $height)
+                Spacer()
+            }
+            Text("Area: \(area.formatted(.number.precision(.fractionLength(2))))")
+            
+        }
     }
 }
 

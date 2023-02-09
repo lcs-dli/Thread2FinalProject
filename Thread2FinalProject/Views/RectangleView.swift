@@ -9,9 +9,51 @@ import SwiftUI
 
 struct RectangleView: View {
     //MARK: Storing property
+    @State var length: String = ""
+    @State var width: String = ""
     //MARK: Computing property
+    var lengthAsOptionalDouble: Double?{
+        guard let unwrappedLength = Double(length) else{
+            return nil
+        }
+        return unwrappedLength
+    }
+    
+    var widthAsOptionalDouble: Double?{
+        guard let unwrappedWidth = Double(width) else{
+            return nil
+        }
+        return unwrappedWidth
+    }
+    
+    var area: Double{
+        if(widthAsOptionalDouble == nil || lengthAsOptionalDouble == nil){
+            return 0
+        }
+        return widthAsOptionalDouble!*lengthAsOptionalDouble!
+    }
+    
+    var perimeter: Double{
+        if(widthAsOptionalDouble == nil || lengthAsOptionalDouble == nil){
+            return 0
+        }
+        return (widthAsOptionalDouble!+lengthAsOptionalDouble!)*2
+    }
+    
     var body: some View {
-        Text(/*@START_MENU_TOKEN@*/"Hello, World!"/*@END_MENU_TOKEN@*/)
+        VStack{
+            Image("Rectangle")
+            HStack(alignment: .center){
+                Spacer()
+                Text("Length: ")
+                TextField("input", text: $length)
+                Text("Width ")
+                TextField("input", text: $width)
+                Spacer()
+            }
+            Text("Area: \(area.formatted(.number.precision(.fractionLength(2))))")
+            Text("Perimeter: \(perimeter.formatted(.number.precision(.fractionLength(2))))")
+        }.navigationTitle("Rectangle")
     }
 }
 
