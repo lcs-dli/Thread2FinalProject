@@ -36,16 +36,10 @@ struct CircleView: View {
                 Spacer()
                 Text("Radius: ")
                 TextField("input", text: $input)
-                Text("Area: \(area)")
+                Text("Area: \(area.formatted(.number.precision(.fractionLength(2))))")
                 Spacer()
             }
             
-            
-            HStack{
-                //Text("Radius: \(radius!)")
-                
-                
-            }
             
         }.navigationTitle("Circle")
         
