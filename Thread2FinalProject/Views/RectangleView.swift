@@ -8,6 +8,8 @@
 import SwiftUI
 
 struct RectangleView: View {
+    //MARK: Storing property
+    //MARK: Computing property
     var body: some View {
         Text(/*@START_MENU_TOKEN@*/"Hello, World!"/*@END_MENU_TOKEN@*/)
     }
