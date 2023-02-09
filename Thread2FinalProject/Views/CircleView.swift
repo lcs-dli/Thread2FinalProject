@@ -23,12 +23,7 @@ struct CircleView: View {
         }
         return radiusAsOptionalDouble!*Double.pi*radiusAsOptionalDouble!
     }
-    var radiusString: String{
-        guard let radiusAsDouble = radiusAsOptionalDouble else{
-            return "Please enter a numeric value"
-        }
-        return ""
-    }
+    
     var body: some View {
         VStack{
             Image("Circle")
