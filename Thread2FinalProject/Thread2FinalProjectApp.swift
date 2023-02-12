@@ -9,9 +9,27 @@ import SwiftUI
 
 @main
 struct Thread2FinalProjectApp: App {
+    @State var record: [History] = []
+    
     var body: some Scene {
         WindowGroup {
-            InitialListView()
+            NavigationView{
+                TabView{
+                    twoDimensionListView(record: $record)
+                        .tabItem{
+                            Text("2DShape")
+                        }
+                    threeDimensionListView()
+                        .tabItem{
+                            Text("3DShape")
+                        }
+                    HistoryView(record: $record)
+                        .tabItem{
+                            Text("History")
+                        }
+                }
+                .accentColor(.orange)
+            }
         }
     }
 }

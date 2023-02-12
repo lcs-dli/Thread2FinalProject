@@ -8,6 +8,7 @@
 import SwiftUI
 
 struct HistoryView: View {
+    @Binding var record: [History]
     var body: some View {
         if record.isEmpty{
             Text("empty")
@@ -24,8 +25,9 @@ struct HistoryView: View {
     }
 }
 
-struct HistoryView_Previews: PreviewProvider {
+/*struct HistoryView_Previews: PreviewProvider {
     static var previews: some View {
-        HistoryView()
+        HistoryView(record: $record)
     }
 }
+*/

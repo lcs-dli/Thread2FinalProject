@@ -9,11 +9,12 @@ import SwiftUI
 
 struct twoDimensionListView: View {
     //MARK: Storing property
+    @Binding var record: [History]
     //MARK: Computing property
     var body: some View {
         List{
             NavigationLink(destination: {
-                CircleView()
+                CircleView(record: $record)
             }, label: {
                 HStack{
                     Text("Circle")
@@ -40,24 +41,10 @@ struct twoDimensionListView: View {
     }
 }
 
-struct twoDimensionListView_Previews: PreviewProvider {
+/*struct twoDimensionListView_Previews: PreviewProvider {
     static var previews: some View {
         NavigationView{
-            TabView{
-                twoDimensionListView()
-                    .tabItem{
-                        Text("2DShape")
-                    }
-                threeDimensionListView()
-                    .tabItem{
-                        Text("3DShape")
-                    }
-                HistoryView()
-                    .tabItem{
-                        Text("History")
-                    }
-            }
-            .accentColor(.orange)
+            twoDimensionListView(record: $record)
         }
     }
-}
+}*/

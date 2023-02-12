@@ -13,4 +13,4 @@ struct History: Identifiable{
     
     var s: [String] = []
 }
-var record: [History] = []
+

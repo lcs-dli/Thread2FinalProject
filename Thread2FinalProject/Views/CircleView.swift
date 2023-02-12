@@ -10,6 +10,7 @@ import SwiftUI
 struct CircleView: View {
     //MARK: Storing property
     @State var input: String = ""
+    @Binding var record: [History]
     //MARK: Storing property
     var radiusAsOptionalDouble: Double? {
         guard let unwrappedradius = Double(input) else{
@@ -60,12 +61,12 @@ struct CircleView: View {
         
     }
 }
-
+/*
 struct CircleView_Previews: PreviewProvider {
     static var previews: some View {
         NavigationView{
-            CircleView()
+            CircleView(record: $record)
         }
         
     }
-}
+}*/
