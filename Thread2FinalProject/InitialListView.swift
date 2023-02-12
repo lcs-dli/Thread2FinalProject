@@ -9,16 +9,21 @@ import SwiftUI
 
 struct InitialListView: View {
     var body: some View {
-        List{
-            NavigationLink(destination: {
-                twoDimensionListView()
-            }, label: {
-                Text("2D shapes")
-            })
-            
-            
-            Text("3D shapes")
+        TabView{
+            twoDimensionListView()
+                .tabItem{
+                    Text("2DShape")
+                }
+            threeDimensionListView()
+                .tabItem{
+                    Text("3DShape")
+                }
+            HistoryView()
+                .tabItem{
+                    Text("History")
+                }
         }
+        .accentColor(.orange)
     }
 }
 
