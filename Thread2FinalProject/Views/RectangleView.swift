@@ -54,6 +54,38 @@ struct RectangleView: View {
             }
             Text("Area: \(area.formatted(.number.precision(.fractionLength(2))))")
             Text("Perimeter: \(perimeter.formatted(.number.precision(.fractionLength(2))))")
+            
+            Button(action: {
+                var nameOfShape: String = "Rectangle"
+                var lengthString: String{
+                    if lengthAsOptionalDouble == nil{
+                        return "length: 0.00"
+                    }else{
+                        return "length: \(lengthAsOptionalDouble!.formatted(.number.precision(.fractionLength(2))))"
+                    }
+                }
+                var widthString: String{
+                    if widthAsOptionalDouble == nil{
+                        return "width: 0.00"
+                    }else{
+                        return "width: \(widthAsOptionalDouble!.formatted(.number.precision(.fractionLength(2))))"
+                    }
+                }
+                var areaString: String = "Area: \(area.formatted(.number.precision(.fractionLength(2))))"
+                var perimeterString: String = "Perimeter: \(perimeter.formatted(.number.precision(.fractionLength(2))))"
+                var newRecord: History = History(s: [""])
+                newRecord.s.append(nameOfShape)
+                newRecord.s.append(lengthString)
+                newRecord.s.append(widthString)
+                newRecord.s.append(areaString)
+                newRecord.s.append(perimeterString)
+                record.append(newRecord)
+            }, label: {
+                Text("Save Result")
+                    
+            })
+            .buttonStyle(.bordered)
+            .padding()
         }.navigationTitle("Rectangle")
     }
 }
