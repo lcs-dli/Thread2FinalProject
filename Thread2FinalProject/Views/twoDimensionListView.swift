@@ -26,12 +26,12 @@ struct twoDimensionListView: View {
                
             
             NavigationLink(destination: {
-                TriangleView()
+                TriangleView(record: $record)
             }, label: {
                 Text("Triangle")
             })
             NavigationLink(destination: {
-                RectangleView()
+                RectangleView(record: $record)
             }, label: {
                 Text("Rectangle")
             })

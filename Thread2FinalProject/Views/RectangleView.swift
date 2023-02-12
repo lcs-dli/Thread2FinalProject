@@ -11,6 +11,7 @@ struct RectangleView: View {
     //MARK: Storing property
     @State var length: String = ""
     @State var width: String = ""
+    @Binding var record: [History]
     //MARK: Computing property
     var lengthAsOptionalDouble: Double?{
         guard let unwrappedLength = Double(length) else{
@@ -56,9 +57,10 @@ struct RectangleView: View {
         }.navigationTitle("Rectangle")
     }
 }
-
+/*
 struct RectangleView_Previews: PreviewProvider {
     static var previews: some View {
         RectangleView()
     }
 }
+*/
