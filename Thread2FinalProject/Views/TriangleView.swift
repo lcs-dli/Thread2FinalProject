@@ -76,7 +76,7 @@ struct TriangleView: View {
             })
             .buttonStyle(.bordered)
             .padding()
-        }
+        }.navigationTitle("Triangle")
     }
 }
 /*

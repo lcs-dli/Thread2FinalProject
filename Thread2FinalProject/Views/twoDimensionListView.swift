@@ -18,9 +18,6 @@ struct twoDimensionListView: View {
             }, label: {
                 HStack{
                     Text("Circle")
-                    Image("Circle")
-                        .resizable()
-                        .scaledToFit()
                 }
             })
                

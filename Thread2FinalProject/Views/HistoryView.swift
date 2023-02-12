@@ -13,12 +13,18 @@ struct HistoryView: View {
         if record.isEmpty{
             Text("empty")
         }else{
-            List(record.reversed()){
-                currentdisplay in
-                HStack{
-                    Spacer()
-                    HistoryHelpView(input: currentdisplay)
+            VStack{
+                List(record.reversed()){ currentdisplay in
+                    HStack{
+                        Spacer()
+                        HistoryHelpView(input: currentdisplay)
+                    }
                 }
+                Button(action: {
+                    record.removeAll()
+                }, label: {
+                    Text("Clear History")
+                })
             }
         }
         
